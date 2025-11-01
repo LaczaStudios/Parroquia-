@@ -154,3 +154,52 @@ table {
   border: 2px solid black;
   padding: 10px;  
 }
+/* --- Estilos para la zona de Drag and Drop (El Dropper) --- */
+.drop-zone {
+    border: 3px dashed #1E4664; /* Borde punteado azul de la parroquia */
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #1E4664;
+    margin: 30px auto; /* Agregamos 'auto' para centrar */
+    max-width: 800px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: background-color 0.3s ease;
+}
+
+.drop-zone.dragover {
+    background-color: #E0F2F7; /* Color cuando se arrastra algo */
+    border-color: #0D47A1;
+}
+
+/* --- Estilos para la Galería --- */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Espacio entre las fotos */
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.gallery-image {
+    width: 100%;
+    max-width: 300px; /* Limita el tamaño de cada foto */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+    transition: transform 0.3s;
+}
+
+.gallery-image:hover {
+    transform: scale(1.03);
+}
+
+/* Ajuste para que se vean 3 en escritorio */
+@media (min-width: 900px) {
+    .gallery-image {
+        max-width: 30%; 
+    }
+}
